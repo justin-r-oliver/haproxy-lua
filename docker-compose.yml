@@ -1,0 +1,13 @@
+version: '3'
+services:
+  haproxy:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - echo
+
+  echo:
+    image: mendhak/http-https-echo
+    ports:
+      - "80:80"
